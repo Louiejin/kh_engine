@@ -1,0 +1,28 @@
+<ul class="header-inner">
+
+    <li id="menu-trigger" data-target="mainmenu" data-toggle-sidebar data-model-left="sidebarToggle.left" data-ng-class="{ 'open': sidebarToggle.left === true }">
+        <div class="line-wrap">
+            <div class="line top"></div>
+            <div class="line center"></div>
+            <div class="line bottom"></div>
+        </div>
+    </li>
+
+    <li class="logo">
+        <a href="#/">KH Engine</a>
+    </li>
+
+    <li class="pull-right" has-permission="ROLE_USER">
+        <ul class="top-menu">
+            <li class="dropdown" dropdown>
+                <a dropdown-toggle class="tm-settings" href=""></a>
+                <ul class="dropdown-menu dm-icon pull-right">
+                    <li class="hidden-xs">
+                        <a data-ng-click="fullScreen()" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+</ul>

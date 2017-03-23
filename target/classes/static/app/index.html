@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="fragment" content="!"/>
+
+    <title>KH Engine</title>
+
+    <link rel="stylesheet" href="css/material-design-iconic-font.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/select.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/sweet-alert.css"/>
+    <link rel="stylesheet" href="css/chosen.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script data-main="js/main-app" src="js/lib/require.js"></script>
+
+</head>
+
+<body ng-controller="MainController" ng-class="{ 'sw-toggled': sidebarToggle.layoutType === '1', 'modal-open': sidebarToggle.left === true }">
+
+<!-- Header -->
+<header id="header" class="bgm-red" ng-include="'view/partials/header.html'"></header>
+
+<section id="main">
+
+    <aside id="sidebar" data-ng-include="'view/partials/sidebar-left.html'" data-ng-class="{ 'toggled': sidebarToggle.left === true }"></aside>
+
+    <section id="content" ng-class="container" ng-view ng-hide="loading">
+    </section>
+
+</section>
+
+<div ng-show="loading" class="app-content-loading">
+    <i class=" zmdi zmdi-refresh zmdi-hc-spin loading-spinner"></i>
+</div>
+
+</body>
+</html>

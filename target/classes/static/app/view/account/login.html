@@ -1,0 +1,24 @@
+<div class="container text-center" ng-nicescroll nice-option="{cursorcolor: '#e2edff'}">
+
+    <form class="lc-block toggled" id="l-login" novalidate autocomplete="off" ng-submit="login()" ng-autodisable>
+        <div class="input-group m-b-20">
+            <span class="input-group-addon" style="vertical-align: middle;"><i class="zmdi zmdi-account"></i></span>
+            <div class="fg-line">
+                <input type="text" autocomplete="off" ng-model="username" class="form-control" id="username" placeholder="Username"/>
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon" style="vertical-align: middle;"><i class="zmdi zmdi-lock"></i></span>
+            <div class="fg-line">
+                <input type="password" ng-model="password" class="form-control" id="password" placeholder="Password"/>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <button type="submit" class="btn btn-login btn-primary btn-float bgm-lightgreen"><i class="zmdi zmdi-arrow-forward"></i>
+        </button>
+
+    </form>
+</div>

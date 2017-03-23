@@ -1,0 +1,21 @@
+<div class="sidebar-inner c-overflow font-size-14">
+
+    <ul class="main-menu">
+        <li data-ui-sref-active="active" has-permission="ROLE_ADMIN">
+            <a href="#/user/list" ng-click="sidebarStat($event)"><i class="zmdi zmdi-accounts-outline"></i>
+                User List </a></li>
+        <li data-ui-sref-active="active" has-permission="ROLE_ADMIN">
+            <a href="#/kanji_hybrid/list" ng-click="sidebarStat($event)"><i class="zmdi zmdi-translate"></i>
+                Kanji Hybrid List </a></li>
+        <li data-ui-sref-active="active" has-permission="ROLE_ADMIN">
+            <a href="#/kanji_hybrid_phrase/list" ng-click="sidebarStat($event)"><i class="zmdi zmdi-translate"></i>
+                Kanji Hybrid Phrase List </a></li>
+        <li is-authenticated>
+            <a href="" ng-click="sidebarStat($event); logout()"><i class="zmdi zmdi-lock"></i>
+                Logout </a></li>
+        <li is-not-authenticated>
+            <a href="#/login" ng-click="sidebarStat($event);"><i class="zmdi zmdi-lock-open"></i>
+                Login </a></li>
+    </ul>
+
+</div>

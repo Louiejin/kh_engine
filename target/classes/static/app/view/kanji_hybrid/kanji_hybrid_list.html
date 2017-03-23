@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="card">
+                <div class="listview lv-bordered lv-lg">
+                    <div class="lv-header-alt bgm-lightgreen clearfix">
+                        <span class="listview-title">Kanji Hybrid List</span>
+
+                        <div class="lvh-search" data-ng-if="pageState.listviewSearchStat" data-ng-click="pageState.listviewSearchStat">
+                            <input id="hybrid_search" ng-focus="pageState.listviewSearchStat" ng-model="pageable.query"
+                                   type="text" placeholder="Search ..." class="lvhs-input" ng-model-options="{debounce: 500}" ng-change="query()">
+                            <i data-ng-click="pageState.listviewSearchStat = false; pageable.query = null; query()"
+                               class="lvh-search-close">&times;</i>
+                        </div>
+                        <ul class="lv-actions actions">
+                            <li>
+                                <a href="" data-ng-click="pageState.listviewSearchStat = true" event-focus="click" event-focus-id="hybrid_search">
+                                    <i class="zmdi zmdi-search"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/kanji_hybrid/create">
+                                    <i class="zmdi zmdi-plus"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown" dropdown>
+                                <a href="" dropdown-toggle>
+                                    <i class="zmdi zmdi-sort"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="" ng-class="{'f-bold' : pageable.sort == 'english,asc'}"
+                                           ng-click="sort('english,asc')">English (A-Z)</a>
+                                    </li>
+                                    <li>
+                                        <a href="" ng-class="{'f-bold' : pageable.sort == 'english,desc'}"
+                                           ng-click="sort('english,desc')">English (Z-A)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="lv-body">
+                        <a class="lv-item media" href="" ng-repeat="kanjiHybrid in kanjiHybrids"
+                           ng-href="#/kanji_hybrid/{{kanjiHybrid.id}}">
+                            <div class="media-body">
+                                <div class="lv-title">{{kanjiHybrid.hybrid}}, {{kanjiHybrid.english}}</div>
+                                <small class="lv-small">{{kanjiHybrid.coreMeanings}}</small>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center" ng-show="hasNext">
+                <button class="btn btn-primary bgm-lime" ng-click="more()">Load More</button>
+            </div>
+        </div>
+    </div>
+</div>

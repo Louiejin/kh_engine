@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="card">
+                <div class="listview lv-bordered lv-lg">
+                    <div class="lv-header-alt bgm-lightgreen clearfix">
+                        <span class="listview-title">User List</span>
+                        <div class="lvh-search" data-ng-if="pageState.listviewSearchStat" data-ng-click="pageState.listviewSearchStat">
+                            <input id="employee_search" ng-focus="pageState.listviewSearchStat" ng-model="pageState.searchFilter"
+                                   type="text" placeholder="Search ..." class="lvhs-input">
+                            <i data-ng-click="pageState.listviewSearchStat = false; pageState.searchFilter = null"
+                               class="lvh-search-close">&times;</i>
+                        </div>
+                        <ul class="lv-actions actions">
+                            <li>
+                                <a href="" data-ng-click="pageState.listviewSearchStat = true" event-focus="click" event-focus-id="employee_search">
+                                    <i class="zmdi zmdi-search"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/user/create">
+                                    <i class="zmdi zmdi-plus"></i>
+                                </a>
+                            </li>
+                            <!--<li class="dropdown" dropdown>
+                                <a href="" dropdown-toggle aria-expanded="true">
+                                    <i class="zmdi zmdi-sort"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="">Last Modified</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Name</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-settings"></i>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </div>
+
+                    <div class="lv-body">
+                        <a class="lv-item media" href="" data-ng-repeat="user in users | filter:pageState.searchFilter"
+                           ng-href="#/user/{{user.id}}">
+                            <div class="media-body">
+                                <div class="lv-title">{{user.lastName}}, {{user.firstName}}</div>
+                                <small class="lv-small">{{user.username}}</small>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

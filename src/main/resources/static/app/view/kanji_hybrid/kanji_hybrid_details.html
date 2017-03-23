@@ -1,0 +1,162 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <form class="card" name="kanjiHybridForm" id="kanjiHybridForm" novalidate autocomplete="off" ng-submit="save()" ng-autodisable>
+                <div class="card-header bgm-lightgreen m-b-20">
+                    <h2 ng-if="kanjiHybrid.id">{{kanjiHybrid.hybrid}}</h2>
+                    <h2 ng-if="!kanjiHybrid.id">New KanjiHybrid</h2>
+                </div>
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_kanjiHybridRefId" ng-model="kanjiHybrid.refId" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="kanjiHybridForm.information_kanjiHybridRefId.$error" ng-if="kanjiHybridForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Ref Id</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <input type="text" name="information_unicodeId" ng-model="kanjiHybrid.unicodeId" required class="form-control fg-input">
+                            </div>
+                            <div ng-messages="kanjiHybridForm.information_unicodeId.$error" ng-if="kanjiHybridForm.$submitted">
+                                <small class="color-red" ng-message="required">This is required.</small>
+                            </div>
+                            <label class="fg-label">Unicode Id</label>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_kanji1" ng-model="kanjiHybrid.kanji1" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="kanjiHybridForm.information_kanji1.$error" ng-if="kanjiHybridForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Kanji</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_english" ng-model="kanjiHybrid.english" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="kanjiHybridForm.information_english.$error" ng-if="kanjiHybridForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">English</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_coreMeanings" ng-model="kanjiHybrid.coreMeanings" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="kanjiHybridForm.information_coreMeanings.$error" ng-if="kanjiHybridForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Core Meanings</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_radical" ng-model="kanjiHybrid.radical" class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Radical</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_kunyomi" ng-model="kanjiHybrid.kunyomi"
+                                           class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Kunyomi</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_onyomi" ng-model="kanjiHybrid.onyomi"
+                                           class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Onyomi</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_JLPT" ng-model="kanjiHybrid.JLPT" class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">JLPT</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_chinese" ng-model="kanjiHybrid.chinese" class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Chinese</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_grammar" ng-model="kanjiHybrid.grammar"
+                                           class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Grammar</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_bias" ng-model="kanjiHybrid.bias"
+                                           class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Bias</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_setting" ng-model="kanjiHybrid.setting"
+                                           class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Setting</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text-center p-b-30">
+                        <button class="btn btn-primary bgm-lightgreen" type="submit">Save&nbsp;
+                            <i class="zmdi zmdi-save"></i>
+                        </button>
+                        <button class="btn btn-warning" type="button" ng-click="remove()" ng-if="kanjiHybrid.id">Delete&nbsp;
+                            <i class="zmdi zmdi-delete"></i>
+                        </button>
+                        <a href="#/kanji_hybrid/list" class="btn btn-default" type="submit">Cancel&nbsp;
+                            <i class="zmdi zmdi-close"></i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

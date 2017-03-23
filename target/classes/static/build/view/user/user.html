@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <form class="card" name="userForm" id="userForm" novalidate autocomplete="off" ng-submit="save()" ng-autodisable>
+                <div class="card-header bgm-lightgreen m-b-20">
+                    <h2 ng-if="user.id">{{user.username}}</h2>
+                    <h2 ng-if="!user.id">New User</h2>
+                </div>
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-sm-4" ng-if="!user.id">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_username" ng-model="user.username" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="userForm.information_username.$error" ng-if="userForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Username</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_firstName" ng-model="user.firstName" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="userForm.information_firstName.$error" ng-if="userForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_middleName" ng-model="user.middleName" required class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Middle Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_lastName" ng-model="user.lastName" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="userForm.information_lastName.$error" ng-if="userForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_email" ng-model="user.email" class="form-control fg-input">
+                                </div>
+                                <label class="fg-label">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" ng-if="!user.id">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="password" name="information_password" ng-model="user.password"
+                                           ng-required="!user.id" class="form-control fg-input">
+                                </div>
+                                <div ng-messages="userForm.information_password.$error" ng-if="userForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" ng-if="user.id">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="password" name="information_password" ng-model="user.password"
+                                           class="form-control fg-input" placeholder="Leave blank to keep old password">
+                                </div>
+                                <small class="color-orange">Leave blank to keep old password.</small>
+                                <label class="fg-label">Password</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group fg-float">
+                                <label class="checkbox checkbox-inline" style="position: relative; top: 10px;">
+                                    <input type="checkbox" ng-model="user.enabled">
+                                    <i class="input-helper"></i>
+                                </label>
+                                <label class="fg-label">Enabled</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="fg-line fg-float">
+                                <label class="fg-label">Role</label>
+                                <div class="select">
+                                    <select ng-model="user.role" class="form-control">
+                                        <option value="ROLE_USER">User</option>
+                                        <option value="ROLE_ADMIN">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text-center p-b-30">
+                        <button class="btn btn-primary bgm-lightgreen" type="submit">Save&nbsp;
+                            <i class="zmdi zmdi-save"></i>
+                        </button>
+                        <button class="btn btn-warning" type="button" ng-click="remove()" ng-if="user.id">Delete&nbsp;
+                            <i class="zmdi zmdi-delete"></i>
+                        </button>
+                        <a href="#/user/list" class="btn btn-default" type="submit">Cancel&nbsp;
+                            <i class="zmdi zmdi-close"></i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

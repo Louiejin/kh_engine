@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <form class="card" name="kanjiHybridPhraseForm" id="kanjiHybridPhraseForm" novalidate autocomplete="off" ng-submit="save()" ng-autodisable>
+                <div class="card-header bgm-lightgreen m-b-20">
+                    <h2 ng-if="kanjiHybridPhrase.id">{{kanjiHybridPhrase.english}}</h2>
+                    <h2 ng-if="!kanjiHybridPhrase.id">New Kanji Hybrid Phrase</h2>
+                </div>
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_english" ng-model="kanjiHybridPhrase.english" required class="form-control fg-input">
+                                </div>
+                                <div ng-messages="kanjiHybridPhraseForm.information_english.$error" ng-if="kanjiHybridPhraseForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">English Phrase</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group fg-float">
+                                <div class="fg-line">
+                                    <input type="text" name="information_hybrid" ng-model="kanjiHybridPhrase.hybrid" required
+                                           class="form-control fg-input">
+                                </div>
+                                <div ng-messages="kanjiHybridPhraseForm.information_hybrid.$error" ng-if="kanjiHybridPhraseForm.$submitted">
+                                    <small class="color-red" ng-message="required">This is required.</small>
+                                </div>
+                                <label class="fg-label">Hybrid Translation</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text-center p-b-30">
+                        <button class="btn btn-primary bgm-lightgreen" type="submit">Save&nbsp;
+                            <i class="zmdi zmdi-save"></i>
+                        </button>
+                        <button class="btn btn-warning" type="button" ng-click="remove()" ng-if="kanjiHybridPhrase.id">Delete&nbsp;
+                            <i class="zmdi zmdi-delete"></i>
+                        </button>
+                        <a href="#/kanji_hybrid_phrase/list" class="btn btn-default" type="submit">Cancel&nbsp;
+                            <i class="zmdi zmdi-close"></i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
